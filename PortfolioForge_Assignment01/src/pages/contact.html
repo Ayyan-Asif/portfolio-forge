@@ -1,7 +1,507 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="Contact PortfolioForge."><title>Contact | PortfolioForge</title><link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg"><script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="../css/style.css"></head>
-<body data-page="contact"><div id="app-nav"></div><main>
-<section class="section-shell page-hero"><div class="reveal"><span class="eyebrow">CONTACT</span><h1 class="section-title">Say hello.<br><span class="text-neon">Start something.</span></h1><p class="max-w-2xl text-slate-400 text-lg">Feedback, collaboration or questions? Use the form and the message can be delivered through Formspree.</p></div></section>
-<section class="section-shell contact-layout"><div class="contact-side"><article class="contact-card reveal"><span class="contact-icon">✉</span><div><span class="tiny-label">EMAIL</span><h3>hello@portfolioforge.dev</h3><p>For project feedback and collaboration.</p></div></article><article class="contact-card reveal reveal-delay-1"><span class="contact-icon">☎</span><div><span class="tiny-label">PHONE</span><h3>+92 300 000 0000</h3><p>Demo contact number for the assignment.</p></div></article><article class="contact-card reveal reveal-delay-2"><span class="contact-icon">⌂</span><div><span class="tiny-label">LOCATION</span><h3>Lahore, Pakistan</h3><p>Student project / creative web work.</p></div></article><div class="availability reveal reveal-delay-3"><span class="dot-online"></span><div><strong>Currently available</strong><p>Usually replies within 1–2 working days.</p></div></div><div class="mini-map reveal"><span>⌖</span><div><b>Find me here</b><p>Lahore • Pakistan</p></div><div class="map-grid"></div></div></div>
-<form id="contact-form" method="POST" action="https://formspree.io/f/mbglnqje" id="contactForm" class="form-card reveal"><input type="hidden" name="_subject" value="PortfolioForge Contact"><div class="form-header"><span class="tag">FORM 01</span><span class="text-xs text-slate-500">* Required</span></div><div class="form-grid"><label>Full name *<input name="name" type="text" required minlength="2" placeholder="Your name"></label><label>Email *<input name="email" type="email" required placeholder="you@example.com"></label><label>Reason<select name="reason"><option>Project feedback</option><option>Collaboration</option><option>General question</option><option>Other</option></select></label><label>Phone<input name="phone" type="tel" placeholder="+92..."></label><label class="wide">Message *<textarea name="message" required minlength="12" rows="6" placeholder="Tell me what's on your mind..."></textarea></label></div><div class="form-check"><label><input type="checkbox" required> I agree that this message may be received by the portfolio owner.</label></div><button class="btn btn-primary w-full mt-5" type="submit">Send message <span>↗</span></button><p id="contactStatus" class="form-status"></p><p class="form-note">Before submission, replace <code>mbglnqje</code> with your real Formspree form ID.</p></form></section>
-<section class="section-shell"><div class="section-head reveal"><div><span class="eyebrow">QUICK FAQ</span><h2>Questions people ask.</h2></div></div><div class="faq-list"><details class="faq reveal"><summary>Can I update my profile later?</summary><p>Yes. Sign in and use the profile editor on Home.</p></details><details class="faq reveal reveal-delay-1"><summary>Can I upload a photo?</summary><p>Yes. The profile editor accepts an image and saves a browser preview.</p></details><details class="faq reveal reveal-delay-2"><summary>Is this a real backend?</summary><p>No. This assignment version uses client-side JavaScript and LocalStorage. A production version would use a secure backend.</p></details></div></section>
-</main><div id="app-footer"></div><script src="../js/app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact PortfolioForge."
+    >
+
+    <title>Contact | PortfolioForge</title>
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../../assets/favicon.svg"
+    >
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+</head>
+
+
+<body data-page="contact">
+
+    <!-- Navigation -->
+    <header>
+        <nav
+            id="app-nav"
+            aria-label="Main navigation"
+        ></nav>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Page Hero -->
+        <section
+            class="section-shell page-hero"
+            aria-labelledby="contact-title"
+        >
+
+            <header class="reveal">
+
+                <span class="eyebrow">
+                    CONTACT
+                </span>
+
+                <h1
+                    id="contact-title"
+                    class="section-title"
+                >
+                    Say hello.<br>
+
+                    <span class="text-neon">
+                        Start something.
+                    </span>
+                </h1>
+
+                <p class="max-w-2xl text-slate-400 text-lg">
+                    Feedback, collaboration or questions?
+                    Use the form and the message can be delivered
+                    through Formspree.
+                </p>
+
+            </header>
+
+        </section>
+
+
+        <!-- Contact Section -->
+        <section
+            class="section-shell contact-layout"
+            aria-labelledby="contact-form-title"
+        >
+
+            <!-- Contact Information -->
+            <aside class="contact-side">
+
+                <!-- Email -->
+                <article class="contact-card reveal">
+
+                    <span
+                        class="contact-icon"
+                        aria-hidden="true"
+                    >
+                        ✉
+                    </span>
+
+                    <div>
+
+                        <span class="tiny-label">
+                            EMAIL
+                        </span>
+
+                        <h2>
+                            hello@portfolioforge.dev
+                        </h2>
+
+                        <p>
+                            For project feedback and collaboration.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Phone -->
+                <article class="contact-card reveal reveal-delay-1">
+
+                    <span
+                        class="contact-icon"
+                        aria-hidden="true"
+                    >
+                        ☎
+                    </span>
+
+                    <div>
+
+                        <span class="tiny-label">
+                            PHONE
+                        </span>
+
+                        <h2>
+                            +92 300 000 0000
+                        </h2>
+
+                        <p>
+                            Demo contact number for the assignment.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Location -->
+                <article class="contact-card reveal reveal-delay-2">
+
+                    <span
+                        class="contact-icon"
+                        aria-hidden="true"
+                    >
+                        ⌂
+                    </span>
+
+                    <div>
+
+                        <span class="tiny-label">
+                            LOCATION
+                        </span>
+
+                        <h2>
+                            Lahore, Pakistan
+                        </h2>
+
+                        <p>
+                            Student project / creative web work.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Availability -->
+                <aside
+                    class="availability reveal reveal-delay-3"
+                    aria-label="Availability status"
+                >
+
+                    <span
+                        class="dot-online"
+                        aria-hidden="true"
+                    ></span>
+
+                    <div>
+
+                        <strong>
+                            Currently available
+                        </strong>
+
+                        <p>
+                            Usually replies within 1–2 working days.
+                        </p>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- Location Preview -->
+                <figure class="mini-map reveal">
+
+                    <span
+                        aria-hidden="true"
+                    >
+                        ⌖
+                    </span>
+
+                    <figcaption>
+
+                        <b>
+                            Find me here
+                        </b>
+
+                        <p>
+                            Lahore • Pakistan
+                        </p>
+
+                    </figcaption>
+
+                    <div
+                        class="map-grid"
+                        aria-hidden="true"
+                    ></div>
+
+                </figure>
+
+            </aside>
+
+
+            <!-- Contact Form -->
+            <form
+                id="contactForm"
+                method="POST"
+                action="https://formspree.io/f/mbglnqje"
+                class="form-card reveal"
+            >
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="PortfolioForge Contact"
+                >
+
+
+                <!-- Form Header -->
+                <header class="form-header">
+
+                    <span class="tag">
+                        FORM 01
+                    </span>
+
+                    <span class="text-xs text-slate-500">
+                        * Required
+                    </span>
+
+                </header>
+
+
+                <fieldset>
+
+                    <legend
+                        id="contact-form-title"
+                        class="sr-only"
+                    >
+                        Contact information
+                    </legend>
+
+
+                    <div class="form-grid">
+
+                        <!-- Full Name -->
+                        <label>
+
+                            Full name *
+
+                            <input
+                                name="name"
+                                type="text"
+                                required
+                                minlength="2"
+                                placeholder="Your name"
+                            >
+
+                        </label>
+
+
+                        <!-- Email -->
+                        <label>
+
+                            Email *
+
+                            <input
+                                name="email"
+                                type="email"
+                                required
+                                placeholder="you@example.com"
+                            >
+
+                        </label>
+
+
+                        <!-- Reason -->
+                        <label>
+
+                            Reason
+
+                            <select name="reason">
+
+                                <option>
+                                    Project feedback
+                                </option>
+
+                                <option>
+                                    Collaboration
+                                </option>
+
+                                <option>
+                                    General question
+                                </option>
+
+                                <option>
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                        <!-- Phone -->
+                        <label>
+
+                            Phone
+
+                            <input
+                                name="phone"
+                                type="tel"
+                                placeholder="+92..."
+                            >
+
+                        </label>
+
+
+                        <!-- Message -->
+                        <label class="wide">
+
+                            Message *
+
+                            <textarea
+                                name="message"
+                                required
+                                minlength="12"
+                                rows="6"
+                                placeholder="Tell me what's on your mind..."
+                            ></textarea>
+
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- Consent -->
+                <aside class="form-check">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            required
+                        >
+
+                        I agree that this message may be received
+                        by the portfolio owner.
+
+                    </label>
+
+                </aside>
+
+
+                <!-- Submit -->
+                <button
+                    class="btn btn-primary w-full mt-5"
+                    type="submit"
+                >
+                    Send message
+                    <span>↗</span>
+                </button>
+
+
+                <!-- Form Status -->
+                <output
+                    id="contactStatus"
+                    class="form-status"
+                    aria-live="polite"
+                ></output>
+
+
+                <!-- Form Note -->
+                <p class="form-note">
+
+                    Before submission, replace
+                    <code>mbglnqje</code>
+                    with your real Formspree form ID.
+
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- FAQ -->
+        <section
+            class="section-shell"
+            aria-labelledby="faq-title"
+        >
+
+            <header class="section-head reveal">
+
+                <div>
+
+                    <span class="eyebrow">
+                        QUICK FAQ
+                    </span>
+
+                    <h2 id="faq-title">
+                        Questions people ask.
+                    </h2>
+
+                </div>
+
+            </header>
+
+
+            <section
+                class="faq-list"
+                aria-label="Frequently asked questions"
+            >
+
+                <!-- FAQ 1 -->
+                <details class="faq reveal">
+
+                    <summary>
+                        Can I update my profile later?
+                    </summary>
+
+                    <p>
+                        Yes. Sign in and use the profile editor on Home.
+                    </p>
+
+                </details>
+
+
+                <!-- FAQ 2 -->
+                <details class="faq reveal reveal-delay-1">
+
+                    <summary>
+                        Can I upload a photo?
+                    </summary>
+
+                    <p>
+                        Yes. The profile editor accepts an image
+                        and saves a browser preview.
+                    </p>
+
+                </details>
+
+
+                <!-- FAQ 3 -->
+                <details class="faq reveal reveal-delay-2">
+
+                    <summary>
+                        Is this a real backend?
+                    </summary>
+
+                    <p>
+                        No. This assignment version uses client-side
+                        JavaScript and LocalStorage. A production
+                        version would use a secure backend.
+                    </p>
+
+                </details>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer id="app-footer"></footer>
+
+
+    <!-- JavaScript -->
+    <script src="../js/app.js"></script>
+
+</body>
+
+</html>

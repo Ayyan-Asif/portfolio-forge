@@ -1,8 +1,414 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="About PortfolioForge — education, projects, skills and personal story."><title>About | PortfolioForge</title><link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg"><script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="../css/style.css"></head>
-<body data-page="about"><div id="app-nav"></div><main>
-<section class="section-shell page-hero"><div class="reveal"><span class="eyebrow">ABOUT THE MAKER</span><h1 class="section-title">Your portfolio is a <span class="text-neon">timeline</span>, not a poster.</h1><p class="max-w-3xl text-slate-400 text-lg">A portfolio should explain where you started, what you learned, what you have built and where you are heading. This page turns that information into a visual story.</p></div></section>
-<section class="section-shell"><div class="section-head reveal"><div><span class="eyebrow">EDUCATION</span><h2>Where did you learn?</h2></div><span class="tag">Storyline 01</span></div><div class="timeline"><article class="timeline-item reveal"><div class="timeline-dot">01</div><div><span class="tiny-label">SCHOOLING</span><h3 id="aboutSchool">Secondary School</h3><p>The foundation stage. Add your school, dates and an achievement that mattered to you.</p></div></article><article class="timeline-item reveal reveal-delay-1"><div class="timeline-dot">02</div><div><span class="tiny-label">COLLEGE</span><h3 id="aboutCollege">College / Intermediate</h3><p>Explain the stage that shaped your interests and the subjects you enjoyed most.</p></div></article><article class="timeline-item reveal reveal-delay-2"><div class="timeline-dot">03</div><div><span class="tiny-label">CURRENT</span><h3 id="aboutCurrent">Current Study</h3><p>Show your present degree, semester, institute and the area you are focusing on.</p></div></article><article class="timeline-item reveal reveal-delay-3"><div class="timeline-dot">04</div><div><span class="tiny-label">NEXT</span><h3 id="aboutNext">Next Goal</h3><p>Add the next certification, internship, research goal or career step.</p></div></article></div></section>
-<section class="section-shell section-dark"><div class="section-head reveal"><div><span class="eyebrow">PROJECTS</span><h2>What are you building?</h2></div></div><div id="dynamicProjects" class="project-grid"></div></section>
-<section class="section-shell"><div class="section-head reveal"><div><span class="eyebrow">SKILLS</span><h2>What can you do?</h2></div></div><div id="dynamicSkills" class="skills-wall reveal"></div></section>
-<section class="section-shell"><div class="values-grid"><article class="value-card reveal"><span>✦</span><h3>Curious</h3><p>Keep learning beyond the classroom.</p></article><article class="value-card reveal reveal-delay-1"><span>↗</span><h3>Practical</h3><p>Show evidence through projects, not only claims.</p></article><article class="value-card reveal reveal-delay-2"><span>⌁</span><h3>Personal</h3><p>Let your personality make the portfolio memorable.</p></article><article class="value-card reveal reveal-delay-3"><span>◎</span><h3>Editable</h3><p>Make your portfolio evolve with your skills.</p></article></div></section>
-</main><div id="app-footer"></div><script src="../js/app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="About PortfolioForge — education, projects, skills and personal story."
+    >
+
+    <title>About | PortfolioForge</title>
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../../assets/favicon.svg"
+    >
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+</head>
+
+
+<body data-page="about">
+
+    <!-- Navigation -->
+    <header>
+        <nav
+            id="app-nav"
+            aria-label="Main navigation"
+        ></nav>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Page Introduction -->
+        <section
+            class="section-shell page-hero"
+            aria-labelledby="about-title"
+        >
+
+            <header class="reveal">
+
+                <span class="eyebrow">
+                    ABOUT THE MAKER
+                </span>
+
+                <h1
+                    id="about-title"
+                    class="section-title"
+                >
+                    Your portfolio is a
+                    <span class="text-neon">
+                        timeline
+                    </span>,
+                    not a poster.
+                </h1>
+
+                <p class="max-w-3xl text-slate-400 text-lg">
+                    A portfolio should explain where you started,
+                    what you learned, what you have built and where
+                    you are heading. This page turns that information
+                    into a visual story.
+                </p>
+
+            </header>
+
+        </section>
+
+
+        <!-- Education Timeline -->
+        <section
+            class="section-shell"
+            aria-labelledby="education-title"
+        >
+
+            <header class="section-head reveal">
+
+                <div>
+
+                    <span class="eyebrow">
+                        EDUCATION
+                    </span>
+
+                    <h2 id="education-title">
+                        Where did you learn?
+                    </h2>
+
+                </div>
+
+                <span class="tag">
+                    Storyline 01
+                </span>
+
+            </header>
+
+
+            <ol class="timeline">
+
+                <!-- Schooling -->
+                <li class="timeline-item reveal">
+
+                    <span
+                        class="timeline-dot"
+                        aria-hidden="true"
+                    >
+                        01
+                    </span>
+
+                    <article>
+
+                        <span class="tiny-label">
+                            SCHOOLING
+                        </span>
+
+                        <h3 id="aboutSchool">
+                            Secondary School
+                        </h3>
+
+                        <p>
+                            The foundation stage. Add your school,
+                            dates and an achievement that mattered
+                            to you.
+                        </p>
+
+                    </article>
+
+                </li>
+
+
+                <!-- College -->
+                <li class="timeline-item reveal reveal-delay-1">
+
+                    <span
+                        class="timeline-dot"
+                        aria-hidden="true"
+                    >
+                        02
+                    </span>
+
+                    <article>
+
+                        <span class="tiny-label">
+                            COLLEGE
+                        </span>
+
+                        <h3 id="aboutCollege">
+                            College / Intermediate
+                        </h3>
+
+                        <p>
+                            Explain the stage that shaped your
+                            interests and the subjects you enjoyed
+                            most.
+                        </p>
+
+                    </article>
+
+                </li>
+
+
+                <!-- Current Study -->
+                <li class="timeline-item reveal reveal-delay-2">
+
+                    <span
+                        class="timeline-dot"
+                        aria-hidden="true"
+                    >
+                        03
+                    </span>
+
+                    <article>
+
+                        <span class="tiny-label">
+                            CURRENT
+                        </span>
+
+                        <h3 id="aboutCurrent">
+                            Current Study
+                        </h3>
+
+                        <p>
+                            Show your present degree, semester,
+                            institute and the area you are focusing on.
+                        </p>
+
+                    </article>
+
+                </li>
+
+
+                <!-- Next Goal -->
+                <li class="timeline-item reveal reveal-delay-3">
+
+                    <span
+                        class="timeline-dot"
+                        aria-hidden="true"
+                    >
+                        04
+                    </span>
+
+                    <article>
+
+                        <span class="tiny-label">
+                            NEXT
+                        </span>
+
+                        <h3 id="aboutNext">
+                            Next Goal
+                        </h3>
+
+                        <p>
+                            Add the next certification, internship,
+                            research goal or career step.
+                        </p>
+
+                    </article>
+
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- Projects -->
+        <section
+            class="section-shell section-dark"
+            aria-labelledby="projects-title"
+        >
+
+            <header class="section-head reveal">
+
+                <div>
+
+                    <span class="eyebrow">
+                        PROJECTS
+                    </span>
+
+                    <h2 id="projects-title">
+                        What are you building?
+                    </h2>
+
+                </div>
+
+            </header>
+
+
+            <!-- Projects generated by JavaScript -->
+            <section
+                id="dynamicProjects"
+                class="project-grid"
+                aria-label="Portfolio projects"
+            ></section>
+
+        </section>
+
+
+        <!-- Skills -->
+        <section
+            class="section-shell"
+            aria-labelledby="skills-title"
+        >
+
+            <header class="section-head reveal">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SKILLS
+                    </span>
+
+                    <h2 id="skills-title">
+                        What can you do?
+                    </h2>
+
+                </div>
+
+            </header>
+
+
+            <!-- Skills generated by JavaScript -->
+            <section
+                id="dynamicSkills"
+                class="skills-wall reveal"
+                aria-label="Portfolio skills"
+            ></section>
+
+        </section>
+
+
+        <!-- Values -->
+        <section
+            class="section-shell"
+            aria-labelledby="values-title"
+        >
+
+            <header class="section-head reveal">
+
+                <h2
+                    id="values-title"
+                    class="sr-only"
+                >
+                    Portfolio Values
+                </h2>
+
+            </header>
+
+
+            <div class="values-grid">
+
+                <!-- Curious -->
+                <article class="value-card reveal">
+
+                    <span aria-hidden="true">
+                        ✦
+                    </span>
+
+                    <h3>
+                        Curious
+                    </h3>
+
+                    <p>
+                        Keep learning beyond the classroom.
+                    </p>
+
+                </article>
+
+
+                <!-- Practical -->
+                <article class="value-card reveal reveal-delay-1">
+
+                    <span aria-hidden="true">
+                        ↗
+                    </span>
+
+                    <h3>
+                        Practical
+                    </h3>
+
+                    <p>
+                        Show evidence through projects,
+                        not only claims.
+                    </p>
+
+                </article>
+
+
+                <!-- Personal -->
+                <article class="value-card reveal reveal-delay-2">
+
+                    <span aria-hidden="true">
+                        ⌁
+                    </span>
+
+                    <h3>
+                        Personal
+                    </h3>
+
+                    <p>
+                        Let your personality make the
+                        portfolio memorable.
+                    </p>
+
+                </article>
+
+
+                <!-- Editable -->
+                <article class="value-card reveal reveal-delay-3">
+
+                    <span aria-hidden="true">
+                        ◎
+                    </span>
+
+                    <h3>
+                        Editable
+                    </h3>
+
+                    <p>
+                        Make your portfolio evolve
+                        with your skills.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer id="app-footer"></footer>
+
+
+    <!-- JavaScript -->
+    <script src="../js/app.js"></script>
+
+</body>
+
+</html>
