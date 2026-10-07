@@ -1,4 +1,4 @@
-# PortfolioForge — Assignment 01
+# PortfolioForge
 
 This project is rebuilt around the supplied Web Technologies Assignment 01 instructions.
 
