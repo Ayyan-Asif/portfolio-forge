@@ -7,8 +7,10 @@
 
     <meta
         name="description"
-        content="PortfolioForge — vibrant portfolio maker for students and creators."
+        content="PortfolioForge — a vibrant portfolio maker for students and creators. Build, customize, and showcase your projects, skills, and education."
     >
+
+    <meta name="theme-color" content="#101713">
 
     <title>PortfolioForge | Build Your Story</title>
 
@@ -18,6 +20,7 @@
         href="assets/favicon.svg"
     >
 
+    <!-- Tailwind CSS (Assignment 01) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link
@@ -32,7 +35,6 @@
     <header>
         <nav id="app-nav" aria-label="Main navigation"></nav>
     </header>
-
 
     <!-- Main Content -->
     <main>
@@ -93,7 +95,6 @@
                     </aside>
 
                 </header>
-
 
                 <!-- Hero Portfolio Preview -->
                 <figure class="hero-art reveal reveal-delay-2">
@@ -174,7 +175,6 @@
 
         </section>
 
-
         <!-- Portfolio Features -->
         <section
             class="section-shell section-dark"
@@ -202,7 +202,6 @@
 
             </header>
 
-
             <div class="bento-grid reveal">
 
                 <!-- Projects -->
@@ -223,15 +222,12 @@
                     </p>
 
                     <aside class="project-mini-list">
-
                         <span>✓ Completed</span>
                         <span>◐ In progress</span>
                         <span>→ Next idea</span>
-
                     </aside>
 
                 </article>
-
 
                 <!-- Skills -->
                 <article class="bento-card">
@@ -245,17 +241,14 @@
                     </h3>
 
                     <aside class="skill-bubbles">
-
                         <span>HTML5</span>
                         <span>Tailwind</span>
                         <span>JavaScript</span>
                         <span>Git</span>
                         <span>Python</span>
-
                     </aside>
 
                 </article>
-
 
                 <!-- Education -->
                 <article class="bento-card accent-card">
@@ -274,7 +267,6 @@
                     </p>
 
                 </article>
-
 
                 <!-- Profile Maker -->
                 <article class="bento-card bento-wide">
@@ -295,6 +287,7 @@
 
                     <button
                         id="homeEditBtn"
+                        type="button"
                         class="btn btn-primary mt-3 hidden"
                     >
                         Edit my profile
@@ -314,7 +307,6 @@
 
         </section>
 
-
         <!-- Project Statistics -->
         <section
             class="section-shell"
@@ -324,7 +316,6 @@
             <header class="section-head reveal">
 
                 <div>
-
                     <span class="eyebrow">
                         PROJECT PULSE
                     </span>
@@ -332,11 +323,9 @@
                     <h2 id="stats-title">
                         Show progress, not just perfection.
                     </h2>
-
                 </div>
 
             </header>
-
 
             <div class="stats-grid">
 
@@ -344,65 +333,45 @@
 
                     <span aria-hidden="true">🚀</span>
 
-                    <strong id="statCompleted">
-                        08
-                    </strong>
+                    <strong id="statCompleted">08</strong>
 
-                    <small>
-                        Projects completed
-                    </small>
+                    <small>Projects completed</small>
 
                 </article>
-
 
                 <article class="stat-card reveal reveal-delay-1">
 
                     <span aria-hidden="true">🛠</span>
 
-                    <strong id="statProgress">
-                        03
-                    </strong>
+                    <strong id="statProgress">03</strong>
 
-                    <small>
-                        Currently in progress
-                    </small>
+                    <small>Currently in progress</small>
 
                 </article>
-
 
                 <article class="stat-card reveal reveal-delay-2">
 
                     <span aria-hidden="true">⚡</span>
 
-                    <strong id="statSkills">
-                        04
-                    </strong>
+                    <strong id="statSkills">04</strong>
 
-                    <small>
-                        Core skills
-                    </small>
+                    <small>Core skills</small>
 
                 </article>
-
 
                 <article class="stat-card reveal reveal-delay-3">
 
                     <span aria-hidden="true">📚</span>
 
-                    <strong>
-                        04
-                    </strong>
+                    <strong>04</strong>
 
-                    <small>
-                        Learning stages
-                    </small>
+                    <small>Learning stages</small>
 
                 </article>
 
             </div>
 
         </section>
-
 
         <!-- Quote -->
         <section
@@ -431,7 +400,6 @@
             </blockquote>
 
         </section>
-
 
         <!-- Profile Maker -->
         <section
@@ -468,7 +436,6 @@
 
                 </header>
 
-
                 <!-- Editor Preview -->
                 <aside
                     class="fake-editor"
@@ -481,47 +448,34 @@
                         <span></span>
                         <span></span>
 
-                        <b>
-                            PROFILE EDITOR
-                        </b>
+                        <b>PROFILE EDITOR</b>
 
                     </header>
 
-
                     <section class="editor-row">
 
-                        <label>
-                            Name
-                        </label>
+                        <label>Name</label>
 
                         <div class="editor-line"></div>
 
                     </section>
 
-
                     <section class="editor-row">
 
-                        <label>
-                            Skills
-                        </label>
+                        <label>Skills</label>
 
                         <div class="editor-tags">
-
                             <i></i>
                             <i></i>
                             <i></i>
                             <i></i>
-
                         </div>
 
                     </section>
 
-
                     <section class="editor-row">
 
-                        <label>
-                            Photo
-                        </label>
+                        <label>Photo</label>
 
                         <div class="editor-photo"></div>
 
@@ -535,10 +489,8 @@
 
     </main>
 
-
     <!-- Footer -->
     <footer id="app-footer"></footer>
-
 
     <!-- JavaScript -->
     <script src="src/js/app.js"></script>

@@ -41,3 +41,89 @@
 .modal-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:9px}
 .empty-state{grid-column:1/-1;color:#718077;font-size:.8rem;padding:18px;border:1px dashed #bfcfc3;border-radius:12px}
 @media(max-width:760px){.profile-modal-large{max-height:94vh;padding:18px}.crud-section-head{align-items:flex-start;flex-direction:column}.crud-row{grid-template-columns:1fr}.modal-actions{justify-content:stretch}.modal-actions .btn{flex:1}.inner-grid{grid-template-columns:1fr}}
+
+/* =========================================================
+   ASSIGNMENT 03 — CRUD, SEARCH/FILTER, API, UI SUPPORT
+   ========================================================= */
+
+[hidden]{display:none!important}
+input.invalid,select.invalid,textarea.invalid{border-color:#c04444!important}
+.form-status.success{color:#27834b}
+.form-status:empty{display:none}
+
+/* small shared components */
+.tag{display:inline-block;padding:5px 10px;border-radius:999px;background:#def8e7;color:#0a6a32;border:1px solid #bfe4ca;font:700 .62rem 'DM Mono',monospace;letter-spacing:.06em;width:max-content;max-width:100%}
+.dark .tag{background:#123220;color:var(--green2);border-color:#294936}
+.section-green-edge{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nav-cta{padding:9px 13px;font-size:.74rem}
+.toast{position:fixed;right:18px;bottom:18px;z-index:200;max-width:min(92vw,340px);padding:12px 16px;border-radius:12px;background:#0a140e;color:#fff;border:1px solid var(--green);font-size:.8rem;font-weight:700;box-shadow:0 14px 34px rgba(0,0,0,.28);animation:revealUp .35s ease both}
+
+/* profile editor modal (opened from "Edit Portfolio") */
+.modal-backdrop{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:16px;background:rgba(3,6,5,.72);backdrop-filter:blur(4px)}
+.profile-modal{width:min(100%,640px);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.profile-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:18px}
+.profile-modal-head h2{margin:0;font-size:1.6rem}
+.close-btn{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:1.2rem;line-height:1}
+.close-btn:hover{border-color:var(--green)}
+.photo-row{display:flex;align-items:center;gap:14px}
+.photo-preview{width:64px;height:64px;border-radius:16px;object-fit:cover;border:1px solid var(--line)}
+.crud-title{font-weight:800}
+
+/* Task 1 — add / edit form */
+.assignment-panel{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;margin-bottom:22px}
+.assignment-panel h3{margin:0 0 16px;font-size:1.35rem}
+.assignment-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.assignment-full-width{grid-column:1/-1}
+.assignment-form-grid label,.assignment-toolbar label{display:block;margin-bottom:7px;font-size:.74rem;font-weight:700;color:var(--muted)}
+.assignment-form-grid input,.assignment-form-grid select,.assignment-form-grid textarea,
+.assignment-toolbar input,.assignment-toolbar select,.assignment-api-toolbar select,
+.project-search input,.project-filter select{width:100%;min-height:46px;padding:10px 13px;border:1px solid var(--line);border-radius:11px;background:var(--bg);color:var(--ink);font-size:.84rem;outline:none;transition:border-color .2s,box-shadow .2s}
+.assignment-form-grid textarea{resize:vertical;min-height:110px}
+.assignment-form-grid input:focus,.assignment-form-grid select:focus,.assignment-form-grid textarea:focus,
+.assignment-toolbar input:focus,.assignment-toolbar select:focus,.assignment-api-toolbar select:focus,
+.project-search input:focus,.project-filter select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(54,209,116,.14)}
+.assignment-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+
+/* search + filter bars */
+.assignment-toolbar,.project-tools{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px;margin:6px 0 18px}
+.assignment-toolbar>div:not(.assignment-toolbar-actions),.project-search,.project-filter{flex:1 1 220px;display:flex;flex-direction:column}
+.assignment-toolbar>div:not(.assignment-toolbar-actions) label,.project-search label,.project-filter label{margin-bottom:7px;font-size:.74rem;font-weight:700;color:var(--muted)}
+.assignment-toolbar-actions{display:flex;flex-wrap:wrap;gap:10px}
+.project-results-count{margin:8px 0 18px;color:var(--muted);font:500 .7rem 'DM Mono',monospace}
+#clearProjectFilters{background:var(--panel);border-color:var(--line);color:var(--ink);min-height:44px}
+
+/* record cards (CRUD + API) */
+.assignment-results-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:10px 0 14px}
+.assignment-results-heading h3{margin:0;font-size:1.3rem}
+.assignment-record-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.assignment-record-card{display:flex;flex-direction:column;gap:10px;min-width:0;padding:20px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:18px;overflow-wrap:anywhere;transition:transform .25s,border-color .25s,box-shadow .25s}
+.assignment-record-card:hover{transform:translateY(-4px);border-color:rgba(54,209,116,.65);box-shadow:0 14px 30px rgba(15,45,25,.09)}
+.assignment-record-card h3{margin:0;font-size:1.15rem}
+.assignment-record-card p{margin:0;color:var(--muted);font-size:.83rem}
+.assignment-repo-stats{font:500 .7rem 'DM Mono',monospace}
+.record-date{color:var(--muted);font:500 .64rem 'DM Mono',monospace}
+.assignment-record-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.assignment-record-card .btn{padding:9px 13px;font-size:.76rem}
+.assignment-delete-btn{background:#fff0f0;color:#ad3535;border-color:#efcaca}
+.assignment-delete-btn:hover{background:#ffe3e3}
+.dark .assignment-delete-btn{background:#2a1414;color:#ff9b9b;border-color:#543030}
+
+/* Task 2 — API toolbar + loading skeleton */
+.assignment-api-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:20px}
+.assignment-api-toolbar select{width:auto;min-width:180px}
+.section-dark .assignment-api-toolbar select{background:#0d1711;color:#fff;border-color:#26382c}
+.section-dark .assignment-api-toolbar .form-status{flex:1 1 240px;margin:0;color:#9bd8b2}
+.section-dark .assignment-api-toolbar .form-status.error{color:#ff9b9b}
+.section-dark .assignment-record-card{background:#0d1711;border-color:#26382c;color:#fff}
+.section-dark .assignment-record-card p{color:#9bac9f}
+.section-dark .empty-state{color:#9bac9f;border-color:#2a4131}
+.skeleton-card{min-height:190px}
+.skeleton-line{display:block;height:12px;border-radius:99px;background:linear-gradient(90deg,#1c2d21 25%,#2a4832 50%,#1c2d21 75%);background-size:200% 100%;animation:skeletonPulse 1.2s linear infinite}
+.skeleton-line.short{width:35%}
+@keyframes skeletonPulse{to{background-position:-200% 0}}
+
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+
+@media(max-width:980px){.assignment-record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.assignment-record-grid,.assignment-form-grid{grid-template-columns:1fr}.assignment-toolbar-actions .btn,.assignment-actions .btn{flex:1}.assignment-api-toolbar select{width:100%}}
+@media(prefers-reduced-motion:reduce){.assignment-record-card,.skeleton-line,.reveal{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}

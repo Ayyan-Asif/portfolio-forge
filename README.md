@@ -1,63 +1,83 @@
 # PortfolioForge
 
-This project is rebuilt around the supplied Web Technologies Assignment 01 instructions.
+Web Technologies project built across three assignments:
 
-## Exactly five main pages
+| Assignment | Focus |
+|---|---|
+| 01 | HTML, CSS, Tailwind CSS, five-page layout, dark mode |
+| 02 | Semantic HTML tags |
+| 03 | JavaScript CRUD + Local Storage, search/filter, Axios API |
+
+## Pages
 
 - `index.html` — Home
-- `src/pages/about.html` — About
+- `src/pages/about.html` — About, **CRUD dashboard** and **GitHub API section** (Assignment 03)
 - `src/pages/contact.html` — Contact
 - `src/pages/signin.html` — Sign In
 - `src/pages/signup.html` — Sign Up
 
-## Requirement coverage
+## Assignment 03
 
-- Consistent navbar + footer across all five pages
-- Tailwind CSS used on every page
-- 10+ UI elements/components per page through cards, badges, forms, buttons, timelines, accordions, stats, navigation, footer blocks, etc.
-- Unique browser title for every page
-- Favicon on every page
-- Responsive layout for desktop/tablet/mobile
-- Dark mode with LocalStorage persistence
-- Portfolio maker profile editor after sign-in
-- Update / delete profile
-- Photo upload + preview
-- Projects: completed / in progress / next idea
-- Skills wall
-- Education / schooling / college / current study timeline
-- Password visibility + password strength interaction
-- Multiple transitions/animations: reveal, hover lift, floating cards, shimmer, pulse, spin, bob, tilt, magnetic button, icon rotation, nav transitions, focus transitions and more
+### Task 1 — CRUD with Local Storage (About page → "Manage Your Projects")
 
-## Contact form — required manual activation
+- **Create:** form adds a project object to an array.
+- **Read:** records are rendered as cards with `map()`.
+- **Update:** *Edit* loads the record into the form; *Save Changes* updates it.
+- **Delete:** removes one record (`filter()`), or *Delete All* clears storage (`removeItem()`).
+- **Local Storage:** the array is saved under the key `portfolioforge_project_records` with `setItem()` and read back with `getItem()`, so data survives a refresh.
+- **Search / filter:** live text search plus a category filter, built with `filter()`.
+- **Array methods used:** `filter()`, `find()`, `map()`, `some()` (duplicate-title check), `every()` (form validation), `reduce()` (API star total), `sort()`.
 
-The form is configured for Formspree but intentionally contains a placeholder endpoint:
+### Task 2 — Axios + public API (About page → "PortfolioForge on GitHub")
 
-`https://formspree.io/f/YOUR_FORMSPREE_ID`
+- API: **GitHub REST API** — free, JSON, no API key.
+- Endpoint: `GET https://api.github.com/users/{username}/repos`
+- Axios is loaded by CDN in `about.html` and called with `axios.get()` in `src/js/app.js`.
+- Data is shown as cards with a **loading skeleton**, **error messages** (404, rate limit, timeout, offline) and a language filter.
+- Change the username in one place: `GITHUB_USERNAME` near the bottom of `src/js/app.js`.
 
-To make it fully functional for submission:
+> GitHub allows 60 unauthenticated requests per hour per IP. No token is used, so nothing secret is stored in the repository.
 
-1. Create a Formspree form at https://formspree.io/
-2. Copy your endpoint.
-3. Open `src/pages/contact.html`.
-4. Replace `YOUR_FORMSPREE_ID` in the form `action` URL.
-5. Commit and push the change to GitHub.
-6. Test the live Contact page.
+## Other features
 
-This is the only step that requires your own external account because an actual Formspree endpoint cannot be invented safely.
+Dark mode (saved in Local Storage), profile editor after sign-in (photo upload, projects, skills, education), password strength meter, responsive layout.
 
-## Demo login
+Demo login: `demo@portfolio.dev` / `Portfolio123!`
 
-Email: `demo@portfolio.dev`
-Password: `Portfolio123!`
+## Contact form
 
-## Demo limitation
+Replace `YOUR_FORMSPREE_ID` in the form action inside `src/pages/contact.html` with your own Formspree endpoint.
 
-This is intentionally a front-end assignment demo. Profile data is stored in LocalStorage. It is not secure production authentication.
+## Deploy to GitHub Pages (auto-updates on every push)
 
-## Suggested GitHub Pages deployment
+1. Push this folder to your existing repository (`main` branch).
+2. Repo → **Settings → Pages**.
+3. Source: **Deploy from a branch** → `main` → `/ (root)` → Save.
+4. Your live link will be `https://<username>.github.io/<repository>/`.
+5. Every later `git push` to `main` redeploys the same link automatically (about 1 minute).
 
-Use GitHub Pages with the `main` branch. The root `index.html` is already in the repository root.
+```bash
+git add .
+git commit -m "Assignment 03: CRUD, Local Storage and Axios API"
+git push origin main
+```
 
-## Suggested submission PDF screenshots
+## Folder structure
 
-The assignment asks for a live website link, GitHub repository link, expanded VS Code folder structure, and initial/hero screenshots for Home, About, Contact, Sign In and Sign Up.
+```
+PortfolioForge_Assignment01/
+├── index.html
+├── README.md
+├── project-manifest.json
+├── assets/
+│   ├── avatar-placeholder.svg
+│   └── favicon.svg
+└── src/
+    ├── css/style.css
+    ├── js/app.js
+    └── pages/
+        ├── about.html
+        ├── contact.html
+        ├── signin.html
+        └── signup.html
+```

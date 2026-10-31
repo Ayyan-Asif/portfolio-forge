@@ -1,8 +1,547 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="About PortfolioForge — education, projects, skills and personal story."><title>About | PortfolioForge</title><link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg"><script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="../css/style.css"></head>
-<body data-page="about"><div id="app-nav"></div><main>
-<section class="section-shell page-hero"><div class="reveal"><span class="eyebrow">ABOUT THE MAKER</span><h1 class="section-title">Your portfolio is a <span class="text-neon">timeline</span>, not a poster.</h1><p class="max-w-3xl text-slate-400 text-lg">A portfolio should explain where you started, what you learned, what you have built and where you are heading. This page turns that information into a visual story.</p></div></section>
-<section class="section-shell"><div class="section-head reveal"><div><span class="eyebrow">EDUCATION</span><h2>Where did you learn?</h2></div><span class="tag">Storyline 01</span></div><div class="timeline"><article class="timeline-item reveal"><div class="timeline-dot">01</div><div><span class="tiny-label">SCHOOLING</span><h3 id="aboutSchool">Secondary School</h3><p>The foundation stage. Add your school, dates and an achievement that mattered to you.</p></div></article><article class="timeline-item reveal reveal-delay-1"><div class="timeline-dot">02</div><div><span class="tiny-label">COLLEGE</span><h3 id="aboutCollege">College / Intermediate</h3><p>Explain the stage that shaped your interests and the subjects you enjoyed most.</p></div></article><article class="timeline-item reveal reveal-delay-2"><div class="timeline-dot">03</div><div><span class="tiny-label">CURRENT</span><h3 id="aboutCurrent">Current Study</h3><p>Show your present degree, semester, institute and the area you are focusing on.</p></div></article><article class="timeline-item reveal reveal-delay-3"><div class="timeline-dot">04</div><div><span class="tiny-label">NEXT</span><h3 id="aboutNext">Next Goal</h3><p>Add the next certification, internship, research goal or career step.</p></div></article></div></section>
-<section class="section-shell section-dark"><div class="section-head reveal"><div><span class="eyebrow">PROJECTS</span><h2>What are you building?</h2></div></div><div id="dynamicProjects" class="project-grid"></div></section>
-<section class="section-shell"><div class="section-head reveal"><div><span class="eyebrow">SKILLS</span><h2>What can you do?</h2></div></div><div id="dynamicSkills" class="skills-wall reveal"></div></section>
-<section class="section-shell"><div class="values-grid"><article class="value-card reveal"><span>✦</span><h3>Curious</h3><p>Keep learning beyond the classroom.</p></article><article class="value-card reveal reveal-delay-1"><span>↗</span><h3>Practical</h3><p>Show evidence through projects, not only claims.</p></article><article class="value-card reveal reveal-delay-2"><span>⌁</span><h3>Personal</h3><p>Let your personality make the portfolio memorable.</p></article><article class="value-card reveal reveal-delay-3"><span>◎</span><h3>Editable</h3><p>Make your portfolio evolve with your skills.</p></article></div></section>
-</main><div id="app-footer"></div><script src="../js/app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Explore PortfolioForge projects, skills, education, and live GitHub repository information."
+    >
+
+    <title>About | PortfolioForge</title>
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../../assets/favicon.svg"
+    >
+
+    <!-- Tailwind CSS (Assignment 01) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Axios for the GitHub REST API request (Assignment 03) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body data-page="about">
+
+    <!-- Navigation -->
+    <header>
+        <nav id="app-nav" aria-label="Main navigation"></nav>
+    </header>
+
+    <main>
+
+        <!-- PAGE HERO -->
+        <section class="section-shell page-hero">
+            <div class="reveal">
+                <span class="eyebrow">ABOUT THE MAKER</span>
+
+                <h1 class="section-title">
+                    Your portfolio is a
+                    <span class="text-neon">timeline</span>,
+                    not a poster.
+                </h1>
+
+                <p class="max-w-3xl text-slate-400 text-lg">
+                    A portfolio should explain where you started,
+                    what you learned, what you have built and where
+                    you are heading. This page turns that information
+                    into a visual story.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- EDUCATION TIMELINE -->
+        <section class="section-shell">
+
+            <div class="section-head reveal">
+                <div>
+                    <span class="eyebrow">EDUCATION</span>
+                    <h2>Where did you learn?</h2>
+                </div>
+
+                <span class="tag">Storyline 01</span>
+            </div>
+
+            <div class="timeline">
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-dot">01</div>
+
+                    <div>
+                        <span class="tiny-label">SCHOOLING</span>
+
+                        <h3 id="aboutSchool">Secondary School</h3>
+
+                        <p>
+                            The foundation stage. Add your school,
+                            dates and an achievement that mattered
+                            to you.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal reveal-delay-1">
+                    <div class="timeline-dot">02</div>
+
+                    <div>
+                        <span class="tiny-label">COLLEGE</span>
+
+                        <h3 id="aboutCollege">College / Intermediate</h3>
+
+                        <p>
+                            Explain the stage that shaped your
+                            interests and the subjects you enjoyed
+                            most.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal reveal-delay-2">
+                    <div class="timeline-dot">03</div>
+
+                    <div>
+                        <span class="tiny-label">CURRENT</span>
+
+                        <h3 id="aboutCurrent">Current Study</h3>
+
+                        <p>
+                            Show your present degree, semester,
+                            institute and the area you are focusing on.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal reveal-delay-3">
+                    <div class="timeline-dot">04</div>
+
+                    <div>
+                        <span class="tiny-label">NEXT</span>
+
+                        <h3 id="aboutNext">Next Goal</h3>
+
+                        <p>
+                            Add the next certification, internship,
+                            research goal or career step.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- EXISTING PORTFOLIO PROJECTS -->
+        <section class="section-shell section-dark">
+
+            <div class="section-head reveal">
+                <div>
+                    <span class="eyebrow">PROJECTS</span>
+
+                    <h2>What are you building?</h2>
+
+                    <p class="text-slate-400 mt-3">
+                        Search your projects or filter them by status.
+                    </p>
+                </div>
+
+                <span class="tag">JavaScript Filtering</span>
+            </div>
+
+            <div class="project-tools reveal">
+
+                <div class="project-search">
+                    <label for="projectSearch">Search projects</label>
+
+                    <input
+                        type="search"
+                        id="projectSearch"
+                        placeholder="Search projects..."
+                        autocomplete="off"
+                        aria-describedby="projectResultsCount"
+                    >
+                </div>
+
+                <div class="project-filter">
+                    <label for="projectStatusFilter">Filter by status</label>
+
+                    <select id="projectStatusFilter">
+                        <option value="all">All Projects</option>
+                        <option value="completed">Completed</option>
+                        <option value="progress">In Progress</option>
+                        <option value="idea">Next Idea</option>
+                    </select>
+                </div>
+
+                <button
+                    type="button"
+                    id="clearProjectFilters"
+                    class="btn btn-ghost"
+                >
+                    Clear Filters
+                </button>
+
+            </div>
+
+            <p
+                id="projectResultsCount"
+                class="project-results-count"
+                aria-live="polite"
+            >
+                Loading projects...
+            </p>
+
+            <div
+                id="dynamicProjects"
+                class="project-grid"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+
+        <!-- ASSIGNMENT CRUD DASHBOARD -->
+        <section class="section-shell">
+
+            <div class="section-head reveal">
+                <div>
+                    <span class="eyebrow">PROJECT MANAGEMENT</span>
+
+                    <h2>Manage Your Projects</h2>
+
+                    <p class="text-slate-400 mt-3">
+                        Add new projects, view saved records, edit details,
+                        or delete projects. Your records persist in Local Storage.
+                    </p>
+                </div>
+
+                <span class="tag">CRUD + Local Storage</span>
+            </div>
+
+            <!-- CREATE AND UPDATE FORM -->
+            <div class="assignment-panel reveal">
+
+                <h3 id="recordFormHeading">Add a Project</h3>
+
+                <form id="recordForm">
+
+                    <input
+                        type="hidden"
+                        id="recordId"
+                        value=""
+                    >
+
+                    <div class="assignment-form-grid">
+
+                        <div>
+                            <label for="recordTitle">Project Title</label>
+
+                            <input
+                                type="text"
+                                id="recordTitle"
+                                name="title"
+                                placeholder="Enter project title"
+                                maxlength="100"
+                                required
+                            >
+                        </div>
+
+                        <div>
+                            <label for="recordCategory">Category</label>
+
+                            <select
+                                id="recordCategory"
+                                name="category"
+                                required
+                            >
+                                <option value="">Choose a category</option>
+                                <option value="Web Development">
+                                    Web Development
+                                </option>
+                                <option value="AI / Machine Learning">
+                                    AI / Machine Learning
+                                </option>
+                                <option value="Data Analysis">
+                                    Data Analysis
+                                </option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="assignment-full-width">
+                            <label for="recordDescription">
+                                Project Description
+                            </label>
+
+                            <textarea
+                                id="recordDescription"
+                                name="description"
+                                rows="4"
+                                maxlength="1000"
+                                placeholder="Describe your project..."
+                                required
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="assignment-actions">
+
+                        <button
+                            type="submit"
+                            id="recordSubmitButton"
+                            class="btn btn-primary"
+                        >
+                            Add Project
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancelRecordEdit"
+                            class="btn btn-ghost"
+                            hidden
+                        >
+                            Cancel Edit
+                        </button>
+
+                    </div>
+
+                    <p
+                        id="recordFormStatus"
+                        class="form-status"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+            </div>
+
+
+            <!-- SEARCH AND FILTER SAVED RECORDS -->
+            <div class="assignment-toolbar reveal">
+
+                <div>
+                    <label for="recordSearch">Search Saved Projects</label>
+
+                    <input
+                        type="search"
+                        id="recordSearch"
+                        placeholder="Search title, category, or description..."
+                        autocomplete="off"
+                    >
+                </div>
+
+                <div>
+                    <label for="recordFilter">Filter by Category</label>
+
+                    <select id="recordFilter">
+                        <option value="all">All Categories</option>
+                        <option value="Web Development">
+                            Web Development
+                        </option>
+                        <option value="AI / Machine Learning">
+                            AI / Machine Learning
+                        </option>
+                        <option value="Data Analysis">
+                            Data Analysis
+                        </option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="assignment-toolbar-actions">
+                    <button
+                        type="button"
+                        id="clearRecordFilters"
+                        class="btn btn-ghost"
+                    >
+                        Clear Filters
+                    </button>
+
+                    <button
+                        type="button"
+                        id="clearAllRecords"
+                        class="btn assignment-delete-btn"
+                    >
+                        Delete All
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- READ RECORDS -->
+            <div class="assignment-results-heading">
+                <h3>Saved Projects</h3>
+
+                <span
+                    id="recordCount"
+                    class="tag"
+                    aria-live="polite"
+                >
+                    0 projects
+                </span>
+            </div>
+
+            <div
+                id="recordList"
+                class="assignment-record-grid"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+        <section class="section-shell">
+
+            <div class="section-head reveal">
+                <div>
+                    <span class="eyebrow">SKILLS</span>
+
+                    <h2>What can you do?</h2>
+
+                    <p class="text-slate-400 mt-3">
+                        Skills are loaded dynamically from your saved portfolio profile.
+                    </p>
+                </div>
+
+                <span class="tag">Dynamic Rendering</span>
+            </div>
+
+            <div
+                id="dynamicSkills"
+                class="skills-wall reveal"
+            ></div>
+
+        </section>
+
+
+        <!-- GITHUB API INTEGRATION -->
+        <section
+            id="githubApiSection"
+            class="section-shell section-dark"
+        >
+
+            <div class="section-head reveal">
+                <div>
+                    <span class="eyebrow">LIVE DATA</span>
+
+                    <h2>PortfolioForge on GitHub</h2>
+
+                    <p class="text-slate-400 mt-3 max-w-3xl">
+                        Public repositories are fetched with an Axios GET request
+                        to the GitHub REST API and displayed as cards.
+                    </p>
+                </div>
+
+                <span class="tag">Axios + REST API</span>
+            </div>
+
+            <div class="assignment-api-toolbar">
+
+                <button
+                    type="button"
+                    id="loadGithubRepos"
+                    class="btn btn-primary"
+                >
+                    Refresh Repositories
+                </button>
+
+                <select
+                    id="githubLangFilter"
+                    aria-label="Filter repositories by language"
+                >
+                    <option value="all">All languages</option>
+                </select>
+
+                <span id="githubSummary" class="tag" aria-live="polite"></span>
+
+                <p
+                    id="githubApiStatus"
+                    class="form-status"
+                    role="status"
+                    aria-live="polite"
+                >
+                    Connecting to GitHub...
+                </p>
+
+            </div>
+
+            <div
+                id="githubRepoList"
+                class="assignment-record-grid"
+            ></div>
+
+            <div class="mt-6">
+                <a
+                    href="https://github.com/Ayyan-Asif/portfolio-forge"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-ghost"
+                >
+                    View GitHub Repository ↗
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- PORTFOLIO VALUES -->
+        <section class="section-shell">
+
+            <div class="section-head reveal">
+                <div>
+                    <span class="eyebrow">OUR APPROACH</span>
+
+                    <h2>What makes a portfolio meaningful?</h2>
+                </div>
+            </div>
+
+            <div class="values-grid">
+
+                <article class="value-card reveal">
+                    <span>✦</span>
+                    <h3>Curious</h3>
+                    <p>Keep learning beyond the classroom.</p>
+                </article>
+
+                <article class="value-card reveal reveal-delay-1">
+                    <span>↗</span>
+                    <h3>Practical</h3>
+                    <p>Show evidence through projects, not only claims.</p>
+                </article>
+
+                <article class="value-card reveal reveal-delay-2">
+                    <span>⌁</span>
+                    <h3>Personal</h3>
+                    <p>Let your personality make the portfolio memorable.</p>
+                </article>
+
+                <article class="value-card reveal reveal-delay-3">
+                    <span>◎</span>
+                    <h3>Editable</h3>
+                    <p>Make your portfolio evolve with your skills.</p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="app-footer"></footer>
+
+    <!-- Application JavaScript -->
+    <script src="../js/app.js"></script>
+
+</body>
+</html>

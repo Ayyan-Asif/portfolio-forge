@@ -14,5 +14,11 @@
     "assets/favicon.svg",
     "assets/avatar-placeholder.svg"
   ],
-  "formspree": "https://formspree.io/f/YOUR_FORMSPREE_ID"
+  "formspree": "https://formspree.io/f/YOUR_FORMSPREE_ID",
+  "assignment03": {
+    "crud": "src/pages/about.html",
+    "storageKey": "portfolioforge_project_records",
+    "api": "https://api.github.com/users/{username}/repos",
+    "httpClient": "axios"
+  }
 }
